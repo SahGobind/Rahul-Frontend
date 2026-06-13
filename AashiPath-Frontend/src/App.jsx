@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Carsousel from "./components/Carsousel";
@@ -20,8 +20,6 @@ import IndustryDetails from "./components/IndustryDetails";
 import PageHeader from "./components/PageHeader";
 import About from "./pages/About";
 import Careers from "./pages/Careers";
-import AdminLogin from "./pages/AdminLogin";
-import AdminDashboard from "./pages/AdminDashboard";
 
 function HomePage() {
   return (
@@ -73,12 +71,9 @@ function IndustriesPage() {
 }
 
 function App() {
-  const location = useLocation();
-  const isAdminRoute = location.pathname.startsWith("/admin");
-
   return (
     <div className="min-h-screen bg-white text-gray-900">
-      {!isAdminRoute && <Navbar />}
+      <Navbar />
       <ScrollToTop />
 
       <Routes>
@@ -91,8 +86,6 @@ function App() {
         <Route path="/services/:id" element={<ServiceDetails />} />
         <Route path="/industries" element={<IndustriesPage />} />
         <Route path="/industries/:id" element={<IndustryDetails />} />
-        <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin/dashboard" element={<AdminDashboard />} />
       </Routes>
     </div>
   );
