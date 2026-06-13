@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { postContact } from "../api/client";
+import emailjs from "@emailjs/browser";
 import {
   FaWhatsapp,
   FaLinkedin,
@@ -8,43 +8,46 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
 const Contact = ({ hideHeading = false }) => {
   const form = useRef();
   const [status, setStatus] = useState(null);
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
     setStatus("sending");
-    
-    // Prepare payload for backend contact API
-    const formData = new FormData(form.current);
-    const fullName = formData.get("full_name") || "";
 
-    const payload = {
-      fullName: fullName.trim(),
-      email: formData.get("email") || "",
-      phone: formData.get("phone") || "",
-      subject: formData.get("service_type") || "Service Inquiry",
-      message: formData.get("message") || "",
-      category: "general",
-    };
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      console.error("EmailJS is not configured. Add the VITE_EMAILJS_* values to .env.");
+      setStatus("error");
+      setTimeout(() => setStatus(null), 5000);
+      return;
+    }
 
-    postContact(payload)
-      .then(() => {
-        setStatus("success");
-        form.current.reset();
-        setTimeout(() => setStatus(null), 5000);
-      })
-      .catch((err) => {
-        console.error("Backend contact failed:", err);
-        setStatus("error");
-        setTimeout(() => setStatus(null), 5000);
-      });
+    try {
+      await emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        form.current,
+        EMAILJS_PUBLIC_KEY
+      );
+
+      setStatus("success");
+      form.current.reset();
+    } catch (err) {
+      console.error("Email send failed:", err);
+      setStatus("error");
+    } finally {
+      setTimeout(() => setStatus(null), 5000);
+    }
   };
 
   const socialLinks = [
     {
-      href: "https://wa.me/919999999999",
+      href: "https://wa.me/+91 8792994686",
       icon: FaWhatsapp,
       label: "WhatsApp Support",
       detail: "Chat with us instantly",
@@ -60,7 +63,7 @@ const Contact = ({ hideHeading = false }) => {
       iconColor: "text-red-500",
     },
     {
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/company/aashipath-scientific-solutions-pvt-ltd",
       icon: FaLinkedin,
       label: "LinkedIn",
       detail: "Connect professionally",
@@ -68,7 +71,7 @@ const Contact = ({ hideHeading = false }) => {
       iconColor: "text-blue-700",
     },
     {
-      href: "https://instagram.com",
+      href: "https://www.instagram.com/aashipath_scientific_solutions?igsh=aDg0cDliMnhxaGZ0",
       icon: FaInstagram,
       label: "Instagram",
       detail: "Follow our updates",
