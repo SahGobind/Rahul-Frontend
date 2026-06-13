@@ -1,8 +1,0 @@
-{
-  "private": true,
-  "scripts": {
-    "build": "npm --prefix AashiPath-Frontend run build",
-    "dev": "npm --prefix AashiPath-Frontend run dev",
-    "preview": "npm --prefix AashiPath-Frontend run preview"
-  }
-}
