@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaArrowRight, FaAward, FaCogs, FaHandshake, FaTags } from "react-icons/fa";
-import ChooseImage from "../assets/Home/choose-us.jpeg";
+import ChooseImage from "../assets/Home/Choose-us.jpeg";
 
 const features = [
   {
