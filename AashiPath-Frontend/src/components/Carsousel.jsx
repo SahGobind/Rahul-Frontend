@@ -13,7 +13,7 @@ const slides = [
     image: Hero1,
     tagline: "Precision in",
     highlight: "Every Solution",
-    subtitle: "Ashipath Lab Solutions",
+    subtitle: "Aashipath Scientific Lab Solutions",
     description:
       "Delivering high-quality laboratory equipment, technical services, and validation support for pharmaceutical, biotechnology, healthcare, research, and industrial laboratories.",
   },
@@ -23,7 +23,7 @@ const slides = [
     highlight: "Lab Excellence",
     subtitle: "End-to-End Laboratory Support",
     description:
-      "From equipment supply and installation to AMC, validation, and field service — we power your laboratory with expertise, reliability, and innovation.",
+      "From equipment supply and installation to AMC, validation and field service - we power your laboratory with expertise, reliability, and innovation.",
   },
 ];
 

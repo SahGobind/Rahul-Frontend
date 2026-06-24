@@ -105,13 +105,13 @@ const Navbar = () => {
           <span className="flex h-12 lg:h-14 w-12 sm:w-14 lg:w-16 shrink-0 items-center">
             <img
               src="/logo-transparent.png"
-              alt="Ashipath Scientific Solutions"
+              alt="Aashipath Scientific Solutions"
               className="h-14 w-auto object-contain object-left origin-left scale-110 sm:scale-125 lg:h-16 lg:scale-[1.3]"
             />
           </span>
           <div className="hidden sm:block shrink-0">
             <p className="text-sm font-bold text-gray-900 leading-tight">
-              Ashipath
+              Aashipath
             </p>
             <p className="text-xs text-sky-600 font-medium">
               Scientific Lab Solutions

@@ -35,7 +35,7 @@ const Choose = () => {
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="section-label">Why Choose Us</span>
           <h2 className="section-title">
-            The Ashipath <span className="text-sky-600">Advantage</span>
+            The Aashipath <span className="text-sky-600">Advantage</span>
           </h2>
           <p className="section-subtitle mx-auto">
             Trusted laboratory equipment and technical services for pharmaceutical,
@@ -48,7 +48,7 @@ const Choose = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-slate-900/10">
               <img
                 src={ChooseImage}
-                alt="Ashipath laboratory solutions"
+                alt="Aashipath laboratory solutions"
                 className="w-full aspect-[4/5] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent" />

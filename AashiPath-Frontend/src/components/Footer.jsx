@@ -25,20 +25,37 @@ const Footer = () => {
               biotechnology, research, and industrial laboratories.
             </p>
             <div className="flex gap-3 mt-5">
-              {[FaLinkedin, FaInstagram, FaWhatsapp].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors text-lg"
-                >
-                  <Icon />
-                </a>
-              ))}
+              <a
+                href="https://www.linkedin.com/company/aashipath-scientific-solutions-pvt-ltd/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors text-lg"
+              >
+                <FaLinkedin />
+              </a>
+
+              <a
+                href="https://www.instagram.com/aashipath_scientific_solutions?igsh=aDg0cDliMnhxaGZ0"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors text-lg"
+              >
+                <FaInstagram />
+              </a>
+
+              <a
+                href="https://wa.me/918792994686"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors text-lg"
+              >
+                <FaWhatsapp />
+              </a>
             </div>
           </div>
 
           <div>
-            <h3 className="text-lg font-bold mb-5">Services</h3>
+            <h3 className="text-lg font-bold mb-2">Services</h3>
             <ul className="space-y-2.5 text-sm text-sky-100">
               <li>Incubators & CO₂ Incubators</li>
               <li>Environmental Chambers</li>
@@ -107,7 +124,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-sky-600/50 mt-12 pt-8">
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-sky-200">
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs text-sky-200">
             {[
               "Pharmaceutical Manufacturing",
               "Healthcare & Diagnostics",
@@ -122,8 +139,8 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="bg-sky-950/60 py-4 text-center text-xs text-sky-300">
-        © {new Date().getFullYear()} Ashipath Scientific Lab Solutions. All Rights Reserved.
+      <div className="bg-sky-950/60 py-3 text-center text-xs text-sky-300">
+        © {new Date().getFullYear()} Aashipath Scientific Lab Solutions. All Rights Reserved.
       </div>
     </footer>
   );
